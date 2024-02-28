@@ -1,0 +1,20 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghost Framework Server</title>
+</head>
+<body>
+    <h1>Ghost Framework Modules</h1>
+    <ul>
+        {% for module_name, module_instance in modules.items() %}
+            <li>
+                {{ module_name }}
+                <a href="{{ url_for('run_module', module_name=module_name) }}">Run</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
